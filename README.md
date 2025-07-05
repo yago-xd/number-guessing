@@ -40,12 +40,33 @@ Do you want to play again? (Y/N):
 
 ## 🚀 How to Run
 
-1. Clone this repository or download the `.zip`
-2. Open the project in **IntelliJ IDEA** or any Java IDE
-3. Run `Main.java` file
-4. Follow the on-screen instructions
 
-> Requires **Java 8 or above**
+🖥️ Method 1: From Source Code (using IDE)
+1. Clone this repository or [download the .zip](https://github.com/yago-xd/number-guessing/archive/refs/heads/master.zip)
+
+2. Open the project in IntelliJ IDEA or any Java IDE
+
+3. Locate and run the Main.java file
+
+4. Follow the on-screen instructions in the console
+
+✅ Requires Java 8 or above
+
+📦 Method 2: Run Compiled .jar (No IDE needed)
+1. Download the number-guessing.jar file from the [Releases](https://github.com/yago-xd/number-guessing/releases) section 
+
+2. Make sure Java is installed on your system (java -version in terminal)
+
+3. Open terminal/cmd in the folder containing the .jar file
+
+4. Run the following command:
+```java -jar number-guessing.jar```
+
+✅ The game will launch in your terminal window
+
+📝 If double-clicking the .jar does not work on Windows, use the command line as shown above.
+
+Try it on [Replit](https://replit.com/@yago-xd/number-guessing)
 
 ---
 
@@ -57,12 +78,6 @@ Do you want to play again? (Y/N):
 
 ---
 
-## ✏️ Author
-
-Made with ❤️ by Yago  
-📫 [GitHub Profile](https://github.com/yago-xd)
-
----
 
 ## 🌟 Future Improvements
 
