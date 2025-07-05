@@ -47,6 +47,8 @@ Do you want to play again? (Y/N):
 
 > Requires **Java 8 or above**
 
+Try it on: [Replit](https://replit.com/@yago-xd/number-guessing)
+
 ---
 
 ## 🔧 Tools Used
