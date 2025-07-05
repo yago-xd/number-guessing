@@ -31,11 +31,11 @@ Do you want to play again? (Y/N):
 
 ✅ Random number between 1–100  
 ✅ Validates integer input  
-✅ Counts attempts taken by the user
-✅ Timer to keep a track of time taken
+✅ Counts attempts taken by the user  
+✅ Commented and structured properly  
 ✅ Replay feature (`Y/N`)  
 ✅ Clean and readable code  
-✅ Commented and structured properly
+✅ Timer to keep a track of time taken 
 
 ---
 
