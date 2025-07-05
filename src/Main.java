@@ -13,6 +13,7 @@ public class Main {
         int num = rand.nextInt(100) + 1;//generating random number from 1-100(inclusive)
         char playagain ='Y';//setting playagain to Y to allow the first round of game to occur
         boolean guessed=false;//initially setting guessed to false as a round has not been completed yet
+        long start = System.currentTimeMillis();//keep a track of time in ms at the moment when the user would start guessing
         while (playagain =='Y'|| playagain =='y') {
             // core loop to allow replay of game till user wishes to play by entering Y when prompted to
             if(guessed){
@@ -20,6 +21,7 @@ public class Main {
                 num = rand.nextInt(100) + 1;
                 tries=0;
                 guessed=false;
+                start=System.currentTimeMillis();
             }
             System.out.print("\nGuess a number between 1 to 100: ");
             if(sc.hasNextInt())//checking to make sure if entered input is of int value
@@ -44,10 +46,13 @@ public class Main {
                 else{//correct guess block
                     System.out.println("Congrats! You have guessed the number " + num + " correctly.");
                     tries++;
+                    long end = System.currentTimeMillis();//track time at the end of a round
+                    long dur = end-start;//get the time elapsed in ms since the start of the round
                     if (tries == 1)
                         System.out.println("It took you only 1 attempt to guess it");
                     else
                         System.out.println("It took you " + tries + " attempts to guess it");
+                    System.out.println("Time Taken: "+(dur/1000.0)+" seconds");
                     System.out.print("\nDo you want to play again? (Y/N): ");//if a user wants to replay
                     playagain =sc.next().trim().charAt(0);//storing new choice (y/n)
                     guessed=true;//setting guessed as true as a round has been completed
