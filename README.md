@@ -50,7 +50,7 @@ Do you want to play again? (Y/N):
 
 4. Follow the on-screen instructions in the console
 
-✅ Requires Java 8 or above
+  ✅ Requires Java 8 or above
 
 📦 Method 2: Run Compiled .jar (No IDE needed)
 1. Download the number-guessing.jar file from the [Releases](https://github.com/yago-xd/number-guessing/releases) section 
@@ -62,13 +62,11 @@ Do you want to play again? (Y/N):
 4. Run the following command:
 ```java -jar number-guessing.jar```
 
-✅ The game will launch in your terminal window
-
-📝 If double-clicking the .jar does not work on Windows, use the command line as shown above.
+  ✅ The game will launch in your terminal window
+ 
+  📝 If double-clicking the .jar does not work on Windows, use the command line as shown above.
 
 Try it on [Replit](https://replit.com/@yago-xd/number-guessing)
-
-Try it on: [Replit](https://replit.com/@yago-xd/number-guessing)
 
 ---
 
