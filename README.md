@@ -68,6 +68,8 @@ Do you want to play again? (Y/N):
 
 Try it on [Replit](https://replit.com/@yago-xd/number-guessing)
 
+Try it on: [Replit](https://replit.com/@yago-xd/number-guessing)
+
 ---
 
 ## 🔧 Tools Used
