@@ -52,7 +52,7 @@ public class Main {
                         System.out.println("It took you only 1 attempt to guess it");
                     else
                         System.out.println("It took you " + tries + " attempts to guess it");
-                    System.out.println("Time Taken: "+dur+" seconds");
+                    System.out.println("Time Taken: "+(dur/1000)+" seconds");
                     System.out.print("\nDo you want to play again? (Y/N): ");//if a user wants to replay
                     playagain =sc.next().trim().charAt(0);//storing new choice (y/n)
                     guessed=true;//setting guessed as true as a round has been completed
