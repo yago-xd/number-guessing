@@ -63,9 +63,7 @@ Do you want to play again? (Y/N):
 4. Run the following command:
 ```java -jar number-guessing.jar```
 
-  ✅ The game will launch in your terminal window
- 
-  📝 If double-clicking the .jar does not work on Windows, use the command line as shown above.
+  ✅ The game will launch in your terminal 
 
 Try it on [Replit](https://replit.com/@yago-xd/number-guessing)
 
