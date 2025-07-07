@@ -35,7 +35,8 @@ Do you want to play again? (Y/N):
 ✅ Commented and structured properly  
 ✅ Replay feature (`Y/N`)  
 ✅ Clean and readable code  
-✅ Timer to keep a track of time taken 
+✅ Timer to keep a track of time taken
+✅ Shows personal best of attempts and time taken
 
 ---
 
