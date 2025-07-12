@@ -13,14 +13,18 @@ This is my first java project
 ## 📸 Demo of the program
 ```console
 Welcome to the number guessing game
+Enter the last number of the range (1-x): 10
 
-Guess a number between 1 to 100: 50
-Too low. Guess again!
-Guess a number between 1 to 100: 75
+Guess a number between 1 to 10 : 6
 Too high. Guess again!
-Guess a number between 1 to 100: 63
-Congrats! You have guessed the number 63 correctly.
-It took you 3 attempts to guess it
+
+Guess a number between 1 to 10 : 4
+Congrats! You have guessed the number 4 correctly.
+It took you 2 attempts to guess it
+Time Taken: 5 seconds
+
+Current least attempts to guess the number: 2 attempts
+Current least time taken to guess the number: 5 seconds
 
 Do you want to play again? (Y/N):
 ```
@@ -29,7 +33,7 @@ Do you want to play again? (Y/N):
 
 ## 🧠 Features
 
-✅ Random number between 1–100  
+✅ Random number between 1 to end range given by user(1-x)  
 ✅ Validates integer input  
 ✅ Counts attempts taken by the user  
 ✅ Commented and structured properly  
@@ -81,10 +85,8 @@ Try it on [Replit](https://replit.com/@yago-xd/number-guessing)
 
 ## 🌟 Future Improvements
 
-- Add timer to track guess time
 - Add difficulty modes
 - Add GUI using Swing
-- Track the best score per session
 - Allow user to input a range
 - Convert program to OOP based logic
 

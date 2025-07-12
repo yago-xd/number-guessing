@@ -6,26 +6,38 @@ public class Main {
         //Main method to start and run the game with replay support.
         Scanner sc = new Scanner(System.in);// creating a scanner object to read user input
         Random rand = new Random();// to generate the random number
-        System.out.println("Welcome to the number guessing game");
+        int end_range;
+        System.out.print("\nWelcome to the number guessing game");
+        while(true){
+            System.out.print("\nEnter the last number of the range (1-x): ");
+            if(sc.hasNextInt()) {
+                end_range = sc.nextInt();
+                break;
+            }
+            else{
+                System.out.println("Invalid input, must be an integer");
+                sc.next();
+            }
+        }
         //initializing variables for use
         int guess;
         int tries=0;//initializing a variable to keep track of a number of tries before the user guesses it
         int min_tries=Integer.MAX_VALUE;//declaring a variable with the max possible value to check for least no of attempts taken during the program's execution
-        int num = rand.nextInt(100) + 1;//generating random number from 1-100(inclusive)
-        char playagain ='Y';//setting playagain to Y to allow the first round of game to occur
+        int num = rand.nextInt(end_range) + 1;//generating random number from 1 to range(inclusive)
+        char playagain = 'y';//setting playagain to Y to allow the first round of game to occur
         boolean guessed=false;//initially setting guessed to false as a round has not been completed yet
         long start = System.currentTimeMillis();//keep a track of time in ms at the moment when the user would start guessing
         long min_dur=Long.MAX_VALUE;//declaring a variable with the max possible value to check for least time taken during the program's execution
-        while (playagain =='Y'|| playagain =='y') {
+        while (playagain =='y') {
             // core loop to allow replay of game till user wishes to play by entering Y when prompted to
             if(guessed){
                 //if the previous round was complete, reset the state and generate new number
-                num = rand.nextInt(100) + 1;
+                num = rand.nextInt(end_range) + 1;
                 tries=0;
                 guessed=false;
                 start=System.currentTimeMillis();
             }
-            System.out.print("\nGuess a number between 1 to 100: ");
+            System.out.print("\nGuess a number between 1 to "+ end_range +" : ");
             if(sc.hasNextInt())//checking to make sure if entered input is of int value
                 guess = sc.nextInt();//read input and store it if it is a valid value
             else{
@@ -33,8 +45,8 @@ public class Main {
                 sc.next();//clear invalid input
                 continue;//skip this iteration
             }
-            if (guess > 100 || guess < 1) {//check to make sure the value is in between 1 and 100
-                System.out.println("Invalid input, your guess must be within 1 to 100");
+            if (guess > end_range || guess < 1) {//check to make sure the value is in between 1 and 100
+                System.out.println("Invalid input, your guess must be within 1 to "+ end_range);
             }
             else {//core logic
                 if (guess > num) {//too high guess block
@@ -62,7 +74,7 @@ public class Main {
                     System.out.println("\nCurrent least attempts to guess the number: "+min_tries+" attempts");
                     System.out.println("Current least time taken to guess the number: "+min_dur+" seconds");
                     System.out.print("\nDo you want to play again? (Y/N): ");//if a user wants to replay
-                    playagain =sc.next().trim().charAt(0);//storing new choice (y/n)
+                    playagain =sc.next().trim().toLowerCase().charAt(0);//storing new choice (y/n)
                     guessed=true;//setting guessed as true as a round has been completed
                     //this allows the game to reset the state and generate a new number for the next round
                 }
