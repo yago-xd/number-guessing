@@ -24,11 +24,11 @@ public class Main {
         int tries=0;//initializing a variable to keep track of a number of tries before the user guesses it
         int min_tries=Integer.MAX_VALUE;//declaring a variable with the max possible value to check for least no of attempts taken during the program's execution
         int num = rand.nextInt(end_range) + 1;//generating random number from 1 to range(inclusive)
-        char playagain = 'y';//setting playagain to Y to allow the first round of game to occur
+        boolean playAgain = true;//allow the first round of game to occur
         boolean guessed=false;//initially setting guessed to false as a round has not been completed yet
         long start = System.currentTimeMillis();//keep a track of time in ms at the moment when the user would start guessing
         long min_dur=Long.MAX_VALUE;//declaring a variable with the max possible value to check for least time taken during the program's execution
-        while (playagain =='y') {
+        while (playAgain) {
             // core loop to allow replay of game till user wishes to play by entering Y when prompted to
             if(guessed){
                 //if the previous round was complete, reset the state and generate new number
@@ -74,7 +74,15 @@ public class Main {
                     System.out.println("\nCurrent least attempts to guess the number: "+min_tries+" attempts");
                     System.out.println("Current least time taken to guess the number: "+min_dur+" seconds");
                     System.out.println("Do you want to play again? (Y/N): ");//if a user wants to replay
-                    playagain =sc.next().trim().toLowerCase().charAt(0);//storing new choice (y/n)
+                    String choice = sc.next().toLowerCase();//storing choice
+                    if("y".equals(choice)||"n".equals(choice)){//check for valid input
+                        if(!"y".equals(choice)){//if n stop loop, else do nothing(playAgain stays true)
+                            playAgain = false;
+                        }
+                    }
+                    else {
+                        System.out.println("Please enter y or n");//explain what to do
+                    }
                     guessed=true;//setting guessed as true as a round has been completed
                     //this allows the game to reset the state and generate a new number for the next round
                 }
