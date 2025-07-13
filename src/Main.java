@@ -7,9 +7,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);// creating a scanner object to read user input
         Random rand = new Random();// to generate the random number
         int end_range;
-        System.out.print("\nWelcome to the number guessing game");
+        System.out.println("Welcome to the number guessing game");
         while(true){
-            System.out.print("\nEnter the last number of the range (1-x): ");
+            System.out.println("Enter the last number of the range (1-x): ");
             if(sc.hasNextInt()) {
                 end_range = sc.nextInt();
                 break;
@@ -37,7 +37,7 @@ public class Main {
                 guessed=false;
                 start=System.currentTimeMillis();
             }
-            System.out.print("\nGuess a number between 1 to "+ end_range +" : ");
+            System.out.println("Guess a number between 1 to "+ end_range +" : ");
             if(sc.hasNextInt())//checking to make sure if entered input is of int value
                 guess = sc.nextInt();//read input and store it if it is a valid value
             else{
@@ -73,7 +73,7 @@ public class Main {
                     System.out.println("Time Taken: "+dur+" seconds");
                     System.out.println("\nCurrent least attempts to guess the number: "+min_tries+" attempts");
                     System.out.println("Current least time taken to guess the number: "+min_dur+" seconds");
-                    System.out.print("\nDo you want to play again? (Y/N): ");//if a user wants to replay
+                    System.out.println("Do you want to play again? (Y/N): ");//if a user wants to replay
                     playagain =sc.next().trim().toLowerCase().charAt(0);//storing new choice (y/n)
                     guessed=true;//setting guessed as true as a round has been completed
                     //this allows the game to reset the state and generate a new number for the next round
