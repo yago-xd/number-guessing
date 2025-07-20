@@ -2,12 +2,13 @@
 import java.util.Random;
 import java.util.Scanner;
 public class Main {
+    static int score=0;
     public static void main(String[] args) {
         //Main method to start and run the game with replay support.
         Scanner sc = new Scanner(System.in);// creating a scanner object to read user input
         Random rand = new Random();// to generate the random number
         int end_range,start_range;
-        System.out.print("\nWelcome to the number guessing game");
+        System.out.println("\nWelcome to the number guessing game");
         System.out.println("Guess a random number from a range that you want");
         while(true){
             System.out.print("\nEnter the starting number of the range: ");
@@ -75,14 +76,16 @@ public class Main {
                     if(tries<min_tries)//check if current no of attempts is lesser than the previous min_attempts
                         min_tries=tries;//if yes, set min_tries to current no of tries
                     long end = System.currentTimeMillis();//track time at the end of a round
-                    long dur = (end-start)/1000;//get the time elapsed in ms since the start of the round
+                    int dur = (int)((end-start)/1000);//get the time elapsed in ms since the start of the round
                     if(dur<min_dur)//check if current time taken (in s) is lesser than previous time taken
                         min_dur=dur;//if yes, set min_dur to current duration taken for the round
                     if (tries == 1)
                         System.out.println("It took you only 1 attempt to guess it");
                     else
                         System.out.println("It took you " + tries + " attempts to guess it");
+                    score=101-tries-dur;
                     System.out.println("Time Taken: "+dur+" seconds");
+                    System.out.println("Your score is: "+score);
                     System.out.println("\nCurrent least attempts to guess the number: "+min_tries+" attempts");
                     System.out.println("Current least time taken to guess the number: "+min_dur+" seconds");
                     System.out.print("\nDo you want to play again? (Y/N): ");//if a user wants to replay
