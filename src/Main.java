@@ -6,10 +6,22 @@ public class Main {
         //Main method to start and run the game with replay support.
         Scanner sc = new Scanner(System.in);// creating a scanner object to read user input
         Random rand = new Random();// to generate the random number
-        int end_range;
+        int end_range,start_range;
         System.out.print("\nWelcome to the number guessing game");
+        System.out.println("Guess a random number from a range that you want");
         while(true){
-            System.out.print("\nEnter the last number of the range (1-x): ");
+            System.out.print("\nEnter the starting number of the range: ");
+            if(sc.hasNextInt()) {
+                start_range = sc.nextInt();
+                break;
+            }
+            else{
+                System.out.println("Invalid input, must be an integer");
+                sc.next();
+            }
+        }
+        while(true){
+            System.out.print("\nEnter the ending number of the range: ");
             if(sc.hasNextInt()) {
                 end_range = sc.nextInt();
                 break;
@@ -23,7 +35,7 @@ public class Main {
         int guess;
         int tries=0;//initializing a variable to keep track of a number of tries before the user guesses it
         int min_tries=Integer.MAX_VALUE;//declaring a variable with the max possible value to check for least no of attempts taken during the program's execution
-        int num = rand.nextInt(end_range) + 1;//generating random number from 1 to range(inclusive)
+        int num = rand.nextInt(start_range,end_range+1);//generating random number from start_range to end_range(inclusive)
         char playagain = 'y';//setting playagain to Y to allow the first round of game to occur
         boolean guessed=false;//initially setting guessed to false as a round has not been completed yet
         long start = System.currentTimeMillis();//keep a track of time in ms at the moment when the user would start guessing
@@ -32,12 +44,12 @@ public class Main {
             // core loop to allow replay of game till user wishes to play by entering Y when prompted to
             if(guessed){
                 //if the previous round was complete, reset the state and generate new number
-                num = rand.nextInt(end_range) + 1;
+                num = rand.nextInt(start_range,end_range+1);
                 tries=0;
                 guessed=false;
                 start=System.currentTimeMillis();
             }
-            System.out.print("\nGuess a number between 1 to "+ end_range +" : ");
+            System.out.print("\nGuess a number between "+ start_range+" to "+ end_range +" : ");
             if(sc.hasNextInt())//checking to make sure if entered input is of int value
                 guess = sc.nextInt();//read input and store it if it is a valid value
             else{
@@ -45,8 +57,8 @@ public class Main {
                 sc.next();//clear invalid input
                 continue;//skip this iteration
             }
-            if (guess > end_range || guess < 1) {//check to make sure the value is in between 1 and 100
-                System.out.println("Invalid input, your guess must be within 1 to "+ end_range);
+            if (guess > end_range || guess < start_range) {//check to make sure the value is in between starting and ending range
+                System.out.println("Invalid input, your guess must be within "+ start_range + "to "+ end_range);
             }
             else {//core logic
                 if (guess > num) {//too high guess block
