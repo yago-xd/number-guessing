@@ -4,10 +4,10 @@ import java.util.Scanner;
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
     private static final Random rand = new Random();
-    static int score=0,tries=0;
-    static int dur;
-    static int num;
-    static char playagain='y';
+    private static int score=0,tries=0;
+    private static int dur;
+    private static int num;
+    private static char playagain='y';
     public static void score(int min_tries, int min_dur){
         score=101-tries-dur;//the score is calculated based on the number of attempts and time taken to guess the number
         System.out.println("\n------------------------Scoreboard------------------------");
@@ -46,10 +46,17 @@ public class Main {
         playagain = sc.next().trim().toLowerCase().charAt(0);//storing new choice (y/n)
         if (playagain == 'y') {
             replay();//if the user wants to play again, call the replay method
-        } else {
+        }
+        else if(playagain == 'n'){
             System.out.println("Thanks for playing!");
             sc.close();
             System.exit(0);//exit the program
+        }
+        else{
+            System.out.println("Invalid input, assuming you don't want to play again.");
+            System.out.println("Thanks for playing!");
+            sc.close();
+            System.exit(0);
         }
     }
     public static void replay(){
