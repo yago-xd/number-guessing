@@ -12,33 +12,54 @@ This is my first java project
 
 ## 📸 Demo of the program
 ```console
-Welcome to the number guessing game
-Enter the last number of the range (1-x): 10
+==========================================================
+🎮         WELCOME TO THE NUMBER GUESSING GAME!          🎮
+==========================================================
+📌 Set a custom number range.
+📌 Try to guess the number selected by the computer.
+📌 You'll be scored based on:
+   - Number of attempts
+   - Time taken to guess correctly
+📌 You can play as many rounds as you'd like.
+==========================================================
+🟢 Enter 'Y' to play again or 'N' to exit.
+💡 Tip: Think smart and guess wisely!
+==========================================================
 
-Guess a number between 1 to 10 : 6
-Too high. Guess again!
+Enter the starting number of the range: 1
 
-Guess a number between 1 to 10 : 4
-Congrats! You have guessed the number 4 correctly.
-It took you 2 attempts to guess it
-Time Taken: 5 seconds
+Enter the ending number of the range: 5
 
-Current least attempts to guess the number: 2 attempts
-Current least time taken to guess the number: 5 seconds
+🔢 Enter your guess (1 to 5): 3
+Too low. Guess again!
 
-Do you want to play again? (Y/N):
+🔢 Enter your guess (1 to 5): 4
+
+🎉 Congratulations! You've guessed the number 4 correctly!
+
+==================== 🎯 SCOREBOARD 🎯 ====================
+⏱️  Time Taken                : 2 seconds
+🎯 Attempts                   : 2
+🏆 Score                      : 97
+📉 Least Attempts Overall     : 2 attempts
+⏳ Fastest Time Overall       : 2 seconds
+==========================================================
+
+
+🔁 Do you want to play again? (Y/N): n
+👋 Thanks for playing!
 ```
 
 ---
 
 ## 🧠 Features
 
-✅ Random number between 1 to end range given by user(1-x)  
+✅ Random number between start range to end range given by user  
 ✅ Validates integer input  
 ✅ Counts attempts taken by the user  
 ✅ Commented and structured properly  
 ✅ Replay feature (`Y/N`)  
-✅ Clean and readable code  
+✅ Generates a score based on time taken and attempts    
 ✅ Timer to keep a track of time taken  
 ✅ Shows personal best of attempts and time taken
 
